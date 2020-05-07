@@ -1,0 +1,1366 @@
+@import url("https://fonts.googleapis.com/css?family=Cairo:400,600");
+html {
+  direction: rtl; }
+
+html {
+  min-height: 100vh;
+  overflow-y: scroll; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #313131; }
+
+body, input, select {
+  font-family: Cairo, Tahoma, Arial, sans-serif;
+  font-size: 16px; }
+
+.Body {
+  margin: 0 auto;
+  padding: 0;
+  width: 96%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  min-height: 100vh;
+  align-content: stretch;
+  align-items: stretch;
+  padding-bottom: 72px; }
+
+.Content {
+  flex-grow: 1;
+  background: #e8e7e5; }
+
+.Header {
+  position: fixed;
+  height: 100px;
+  display: flex;
+  display: -webkit-flex;
+  width: 96%;
+  left: 2%;
+  z-index: 900;
+  background: #313131; }
+  .Header .logo {
+    display: block;
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0; }
+    .Header .logo img {
+      position: absolute;
+      height: 45px;
+      width: auto;
+      padding-top: 6px; }
+  .Header .menus {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    width: 100%;
+    flex: 100% 1 1;
+    padding: 0px 0;
+    overflow: hidden; }
+    .Header .menus .categories, .Header .menus .subcategories {
+      display: flex;
+      display: -webkit-flex;
+      width: 100%;
+      height: 100%; }
+      .Header .menus .categories a, .Header .menus .subcategories a {
+        color: #EEE;
+        padding: 0 12px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center; }
+        .Header .menus .categories a span, .Header .menus .subcategories a span {
+          margin: 0 8px;
+          white-space: nowrap; }
+        .Header .menus .categories a:hover, .Header .menus .subcategories a:hover {
+          color: white; }
+    .Header .menus .categories {
+      padding: 0 140px; }
+    .Header .menus .categories a.user {
+      color: grey; }
+    .Header .menus .categories a.active {
+      color: #424242;
+      background: #e8e7e5; }
+    .Header .menus .subcategories {
+      background: #e8e7e5; }
+    .Header .menus .subcategories a {
+      color: #000000;
+      margin: 10px; }
+      .Header .menus .subcategories a:hover {
+        background: #DDD; }
+    .Header .menus .subcategories a.active {
+      color: #ff921e;
+      background: #EEE;
+      border: 1px solid #000; }
+  .Header .hamburger {
+    display: none; }
+
+@media (max-width: 1200px) {
+  .Header {
+    height: 80px; }
+    .Header .logo {
+      font-size: 20px; }
+      .Header .logo img {
+        height: 35px; }
+    .Header .menus .categories a, .Header .menus .subcategories a {
+      font-size: 14px;
+      padding: 1px 3px; }
+    .Header .menus .categories {
+      padding: 0 110px; }
+  .ContentPage > .main > .image {
+    top: 80px; } }
+
+@media (max-width: 800px) {
+  .Header {
+    position: fixed;
+    height: 40px;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    box-shadow: unset; }
+    .Header .menus {
+      max-height: 0;
+      overflow: hidden;
+      flex-direction: row;
+      -webkit-flex-direction: row;
+      position: fixed;
+      top: 40px;
+      left: 0;
+      right: 0;
+      transition: max-height .3s;
+      background: #313131;
+      padding: 0;
+      box-shadow: 0 5px 5px #ccc; }
+      .Header .menus.visible {
+        max-height: 100%; }
+      .Header .menus .categories, .Header .menus .subcategories {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        width: 45%;
+        height: 100%;
+        margin-left: 16px;
+        padding: 16px; }
+        .Header .menus .categories a, .Header .menus .subcategories a {
+          padding: 12px 8px;
+          font-size: 16px; }
+          .Header .menus .categories a i, .Header .menus .subcategories a i {
+            display: inline-block;
+            width: 20px;
+            text-align: center; }
+    .Header .hamburger {
+      display: block;
+      font-size: 24px;
+      width: 40px;
+      width: 98%;
+      line-height: 40px;
+      text-align: left;
+      vertical-align: middle;
+      cursor: pointer;
+      color: white; } }
+
+.SubHeader {
+  margin-top: 100px;
+  text-align: center; }
+  .SubHeader .google-warning {
+    background: #F33;
+    color: white;
+    padding: 12px; }
+    .SubHeader .google-warning > a {
+      text-decoration: none;
+      color: white; }
+      .SubHeader .google-warning > a:hover {
+        color: yellow; }
+  .SubHeader .for-sale {
+    background: #F33;
+    color: white;
+    padding: 0 12px; }
+    .SubHeader .for-sale > a {
+      text-decoration: none;
+      color: white; }
+      .SubHeader .for-sale > a:hover {
+        color: yellow; }
+  .SubHeader .subscribe {
+    background: #FF9;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    padding: 6px; }
+    .SubHeader .subscribe > * {
+      margin: 6px; }
+
+@media (max-width: 1200px) {
+  .SubHeader {
+    margin-top: 80px; } }
+
+@media (max-width: 1000px) {
+  .SubHeader {
+    margin-top: 60px; } }
+
+@media (max-width: 800px) {
+  .SubHeader {
+    margin-top: 40px; } }
+
+.Items {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: center;
+  -webkit-justify-content: center; }
+  .Items .item {
+    text-decoration: none;
+    width: 230px;
+    position: relative;
+    display: block;
+    text-align: center;
+    transform: scale(0.9);
+    box-shadow: 0 2px 10px #000;
+    transition: transform .3s, box-shadow .3s;
+    background: #9c0c0c;
+    z-index: 100; 
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    }
+    .Items .item.invisible {
+      opacity: 0.5; }
+    .Items .item img {
+      position: relative;
+      width: 230px;
+      height: 330px; }
+    .Items .item .title {
+      font-weight: 600;
+      font-size: 20px;
+      color: white; }
+    .Items .item .info {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      font-size: 18px;
+      color: white;
+      background: black;
+      /* fallback color */
+      background: rgba(0, 0, 0, 0.7);
+      padding-bottom: 5px; }
+    .Items .item:hover {
+      transform: scale(1.2);
+      box-shadow: 0 1px 15px #333;
+      z-index: 200;
+      -webkit-transform: rotate(-15deg);
+      transform: rotate(-15deg);
+      }
+  .Items .filler {
+    margin: 0 4px;
+    padding: 0 4px;
+    width: 230px; }
+
+body.apps .Items .item img, body.music .Items .item img {
+  height: 200px; }
+
+@media (max-width: 440px) {
+  .Items {
+    justify-content: space-around;
+    -webkit-justify-content: space-around; }
+    .Items .item {
+      width: 280px; }
+      .Items .item img {
+        width: 280px;
+        height: 420px; } }
+
+.Default .filters {
+  padding: 4px;
+  color: black;
+  background: white;
+  margin: 15px 10px 5px 10px;
+  box-shadow: 0 1px 5px #999;
+  position: relative; }
+  .Default .filters .extra {
+    display: inline-block;
+    white-space: nowrap; }
+  .Default .filters input, .Default .filters select {
+    height: 28px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    border: 0; }
+  .Default .filters select {
+    background: #eee; }
+  .Default .filters .search {
+    width: 240px; }
+  .Default .filters .fa {
+    color: #999;
+    line-height: 28px;
+    margin: 0 8px; }
+
+.Default .block {
+  padding: 2px 16px; }
+  .Default .block h2 {
+    margin: 30px 0px 0px 0px; }
+    .Default .block h2 a {
+      text-decoration: none;
+      color: #444; }
+  .Default .block .footer {
+    display: block;
+    margin: 0 -16px;
+    text-align: center;
+    padding: 8px;
+    color: #444;
+    font-size: 20px; }
+    .Default .block .footer.hidden {
+      display: none; }
+  .Default .block .Items .item .title, .Default .block .Items .item .info {
+    position: absolute;
+    opacity: 0;
+    transition: opacity .3s;
+    pointer-events: none;
+    display: block;
+    width: 250px;
+    left: -10px;
+    background: #333; }
+  .Default .block .Items .item .title {
+    bottom: 370px;
+    text-align: center; }
+  .Default .block .Items .item .info {
+    top: 360px;
+    bottom: auto; }
+  .Default .block .Items .item img {
+    transform: scale(1);
+    transition: transform .3s; }
+  .Default .block .Items .item.small {
+    width: 115px; }
+    .Default .block .Items .item.small img {
+      width: 115px;
+      height: 165px; }
+    .Default .block .Items .item.small .title, .Default .block .Items .item.small .info {
+      left: -73px; }
+    .Default .block .Items .item.small .title {
+      bottom: 195px; }
+    .Default .block .Items .item.small .info {
+      top: 185px; }
+  .Default .block .Items .item:hover {
+    transform: scale(0.9); }
+    .Default .block .Items .item:hover img {
+      transform: scale(1.1); }
+    .Default .block .Items .item:hover .title, .Default .block .Items .item:hover .info {
+      opacity: 1; }
+  .Default .block .Items .divider {
+    width: 100%;
+    height: 1px; }
+
+.Default .Items .item.hidden {
+  display: none; }
+
+.List {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column; }
+  .List .filters {
+    padding: 4px;
+    color: black;
+    background: white;
+    margin: 15px 10px 5px 10px;
+    box-shadow: 0 1px 5px #999; }
+    .List .filters .extra {
+      display: inline-block;
+      white-space: nowrap;
+      float: left; }
+    .List .filters input, .List .filters select {
+      height: 28px;
+      padding: 0 8px;
+      box-sizing: border-box;
+      border: 0; }
+    .List .filters select {
+      background: #eee; }
+    .List .filters .search {
+      width: 240px; }
+    .List .filters .fa {
+      color: #999;
+      line-height: 28px;
+      margin: 0 8px; }
+  .List .list {
+    height: 100%;
+    padding: 16px; }
+  .List .nope {
+    background: #EEE;
+    padding: 32px;
+    font-size: 20px; }
+  .List .pager {
+    list-style-type: none;
+    padding: 0;
+    color: black;
+    background: white;
+    margin: 15px 10px 5px 10px;
+    box-shadow: 0 1px 5px #999; }
+    .List .pager li {
+      display: inline-block;
+      margin: 0 5px; }
+      .List .pager li:first-child {
+        margin-left: 0; }
+      .List .pager li:last-child {
+        margin-right: 0; }
+      .List .pager li a {
+        display: block;
+        color: black;
+        padding: 5px 10px;
+        text-decoration: none;
+        font-size: 20px; }
+      .List .pager li.active a {
+        font-weight: bold;
+        background: #eee; }
+
+.ContentPage {
+  display: flex;
+  display: -webkit-flex;
+  width: 100%;
+  min-height: 100%;
+  align-items: stretch;
+  flex: 1 1 100%;
+  flex-direction: column; }
+  .ContentPage > .main {
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+    min-height: 100%;
+    align-items: stretch;
+    flex: 1 1 100%; }
+    .ContentPage > .main > .image {
+      flex-shrink: 0;
+      width: 250px;
+      background: #ededed;
+      position: fixed;
+      overflow-y: auto;
+      top: 100px; }
+      .ContentPage > .main > .image .sticky {
+        max-height: 100%; }
+        .ContentPage > .main > .image .sticky > img {
+          width: 200px;
+          margin: 10px;
+          box-shadow: 0 5px 5px 5px #999; }
+        .ContentPage > .main > .image .sticky > h1 {
+          font-size: 18px;
+          text-align: center; }
+          .ContentPage > .main > .image .sticky > h1 .year {
+            opacity: 0.7;
+            font-size: 16px; }
+        .ContentPage > .main > .image .sticky > .genre {
+          font-size: 14px;
+          padding-right: 20px;
+          color: #999999; }
+          .ContentPage > .main > .image .sticky > .genre > ul {
+            padding: 2px 0px 2px 2px; }
+          .ContentPage > .main > .image .sticky > .genre li {
+            display: inline;
+            list-style-type: none;
+            margin-left: 5px;
+            border: 1px solid #dddddd;
+            text-align: center; }
+            .ContentPage > .main > .image .sticky > .genre li > a {
+              text-decoration: none;
+              color: #444444;
+              background: #DDD;
+              padding: 2px 5px 2px 5px; }
+              .ContentPage > .main > .image .sticky > .genre li > a:hover {
+                background: #FFF; }
+    .ContentPage > .main > .content {
+      min-width: 320px;
+      padding: 0px 270px 20px 20px;
+      background-color: #d9ccc5;
+      flex: 1 1 320px;
+      background: #dcdcdc;
+      /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, #dcdcdc, #ebedee);
+      /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, #dcdcdc, #ebedee);
+      /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, #dcdcdc, #ebedee);
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#f3e8e1, #f5f3f1);
+      /* Standard syntax */ }
+      .ContentPage > .main > .content h1 .year {
+        opacity: 0.7; }
+      .ContentPage > .main > .content .stars {
+        float: left; }
+        .ContentPage > .main > .content .stars .buttonDownload {
+          background-color: #0099bc;
+          color: white;
+          padding: 0 10px;
+          text-decoration: none;
+          font-size: 16px; }
+          .ContentPage > .main > .content .stars .buttonDownload:hover {
+            background-color: #333;
+            color: white; }
+      .ContentPage > .main > .content > .genre {
+        font-size: 18px;
+        opacity: 0.9; }
+      .ContentPage > .main > .content > .released {
+        font-size: 16px;
+        opacity: 0.8; }
+      .ContentPage > .main > .content > .poster img {
+        max-width: 100%;
+        height: auto; }
+      .ContentPage > .main > .content > .rate {
+        text-align: right;
+        font-size: 32px;
+        direction: ltr;
+        font-weight: 600; }
+        .ContentPage > .main > .content > .rate > .label {
+          display: inline-block;
+          line-height: 20px;
+          padding: 30px 0 30px 100px;
+          text-align: center; }
+          .ContentPage > .main > .content > .rate > .label > .small {
+            font-size: 14px;
+            opacity: 0.5; }
+            .ContentPage > .main > .content > .rate > .label > .small > .voters {
+              font-size: 18px; }
+      .ContentPage > .main > .content > .description p, .ContentPage > .main > .content > .description img {
+        max-width: 100%;
+        height: auto; }
+      .ContentPage > .main > .content > .groups {
+        width: 100%;
+        flex: 0 0 280px; }
+        .ContentPage > .main > .content > .groups .group {
+          margin: 8px 0;
+          background: #EEE; }
+          .ContentPage > .main > .content > .groups .group .images {
+            position: relative;
+            width: 280px;
+            height: 220px;
+            overflow: hidden; }
+            .ContentPage > .main > .content > .groups .group .images > .inner {
+              position: absolute;
+              display: flex;
+              right: 0;
+              transition: right 0.2s; }
+              .ContentPage > .main > .content > .groups .group .images > .inner > .image {
+                width: 280px;
+                height: 220px;
+                position: relative;
+                line-height: 200px; }
+                .ContentPage > .main > .content > .groups .group .images > .inner > .image img {
+                  width: 260px;
+                  vertical-align: middle;
+                  margin: 10px; }
+                .ContentPage > .main > .content > .groups .group .images > .inner > .image a, .ContentPage > .main > .content > .groups .group .images > .inner > .image span {
+                  position: absolute;
+                  height: 220px;
+                  top: 0;
+                  color: white;
+                  text-shadow: 0 0 1px black;
+                  font-size: 40px;
+                  line-height: 220px;
+                  text-align: center;
+                  width: 100px;
+                  cursor: pointer;
+                  opacity: 0;
+                  transition: opacity .2s; }
+                  .ContentPage > .main > .content > .groups .group .images > .inner > .image a:hover, .ContentPage > .main > .content > .groups .group .images > .inner > .image span:hover {
+                    opacity: 1; }
+                .ContentPage > .main > .content > .groups .group .images > .inner > .image .prev {
+                  right: 0; }
+                .ContentPage > .main > .content > .groups .group .images > .inner > .image a {
+                  right: 90px;
+                  text-decoration: none; }
+                .ContentPage > .main > .content > .groups .group .images > .inner > .image .next {
+                  right: 180px; }
+          .ContentPage > .main > .content > .groups .group > .name {
+            border: 1px solid white;
+            background: #EEE;
+            font-size: 20px;
+            padding: 8px;
+            cursor: pointer; }
+            .ContentPage > .main > .content > .groups .group > .name span {
+              font-size: 24px;
+              font-weight: 600;
+              color: #39add1; }
+            .ContentPage > .main > .content > .groups .group > .name .fa {
+              opacity: 0.5; }
+          .ContentPage > .main > .content > .groups .group > .description {
+            padding: 8px;
+            font-size: 14px; }
+          .ContentPage > .main > .content > .groups .group .download {
+            display: inline-block;
+            width: 280px;
+            margin: 10px;
+            vertical-align: top;
+            background: white;
+            box-shadow: 2px #e8eaeb; }
+            .ContentPage > .main > .content > .groups .group .download .gcname {
+              font-size: 24px;
+              padding: 8px;
+              border-bottom: 1px solid #e1e8ee; }
+              .ContentPage > .main > .content > .groups .group .download .gcname .size {
+                float: left;
+                font-size: 16px;
+                opacity: 0.7;
+                margin-top: 20px; }
+            .ContentPage > .main > .content > .groups .group .download .button {
+              display: inline-block;
+              position: relative;
+              padding: 3px 0px 3px 0px;
+              margin: 2px 0px 2px 0px;
+              width: 100%;
+              font-weight: bold;
+              text-decoration: none;
+              color: white;
+              transition: .2s; }
+              .ContentPage > .main > .content > .groups .group .download .button:before, .ContentPage > .main > .content > .groups .group .download .button:after {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                padding-top: 10px;
+                padding-bottom: inherit;
+                width: 40px;
+                content: "\00a0";
+                font-family: 'FontAwesome', sans-serif;
+                text-align: center;
+                transition: .2s;
+                transform-origin: 50% 60%; }
+              .ContentPage > .main > .content > .groups .group .download .button:hover {
+                cursor: pointer; }
+              .ContentPage > .main > .content > .groups .group .download .button:active, .ContentPage > .main > .content > .groups .group .download .button:focus {
+                outline: none; }
+
+@-webkit-keyframes bounceright {
+  from {
+    -webkit-transform: translateX(0); }
+  to {
+    -webkit-transform: translateX(3px); } }
+
+@-webkit-keyframes bouncedown {
+  from {
+    -webkit-transform: translateY(0); }
+  to {
+    -webkit-transform: translateY(3px); } }
+            .ContentPage > .main > .content > .groups .group .download .downl {
+              background: #39add1; }
+              .ContentPage > .main > .content > .groups .group .download .downl:hover {
+                background: #298fae; }
+              .ContentPage > .main > .content > .groups .group .download .downl:before {
+                background: #39add1; }
+              .ContentPage > .main > .content > .groups .group .download .downl:active, .ContentPage > .main > .content > .groups .group .download .downl:focus {
+                background: #154b5c; }
+              .ContentPage > .main > .content > .groups .group .download .downl:after {
+                content: "\F0aB"; }
+              .ContentPage > .main > .content > .groups .group .download .downl:hover:after {
+                -webkit-animation: bouncedown .3s alternate ease infinite;
+                animation: bouncedown .3s alternate ease infinite; }
+            .ContentPage > .main > .content > .groups .group .download .play {
+              background: #d13939; }
+              .ContentPage > .main > .content > .groups .group .download .play:hover {
+                background: #ae2929; }
+              .ContentPage > .main > .content > .groups .group .download .play:before {
+                background: #d13939; }
+              .ContentPage > .main > .content > .groups .group .download .play:active, .ContentPage > .main > .content > .groups .group .download .play:focus {
+                background: #5c1515; }
+              .ContentPage > .main > .content > .groups .group .download .play:after {
+                content: "\F04B"; }
+              .ContentPage > .main > .content > .groups .group .download .play:hover:after {
+                -webkit-animation: bounceright .3s alternate ease infinite;
+                animation: bounceright .3s alternate ease infinite; }
+            .ContentPage > .main > .content > .groups .group .download .watch {
+              background: #c30000;
+              color: white;
+              text-align: center; }
+            .ContentPage > .main > .content > .groups .group .download .wlinks {
+              background: #000;
+              padding: 8px;
+              border: 5px solid #f52929;
+              display: none; }
+              .ContentPage > .main > .content > .groups .group .download .wlinks.visible {
+                display: block; }
+            .ContentPage > .main > .content > .groups .group .download .link {
+              background: #1378ce;
+              color: white;
+              text-align: center; }
+            .ContentPage > .main > .content > .groups .group .download .links {
+              background: #000;
+              padding: 8px;
+              border: 5px solid #39add1;
+              display: none; }
+              .ContentPage > .main > .content > .groups .group .download .links.visible {
+                display: block; }
+          .ContentPage > .main > .content > .groups .group.closed > .description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            opacity: 0.7;
+            cursor: pointer; }
+          .ContentPage > .main > .content > .groups .group.closed .group-content {
+            display: none; }
+    .ContentPage > .main > .sidebar {
+      width: 300px;
+      background: #ededed; }
+      .ContentPage > .main > .sidebar > p {
+        padding: 30px; }
+
+@media (max-width: 1200px) {
+  .ContentPage > .main {
+    flex-direction: column;
+    -webkit-flex-direction: column; }
+    .ContentPage > .main > .sidebar {
+      padding-right: 250px;
+      width: auto; }
+  .Header .menus .subcategories a {
+    margin: 5px; }
+  .ContentPage > .main > .image {
+    top: 80px; } }
+
+@media (max-width: 800px) {
+  .ContentPage > .main {
+    flex-direction: column;
+    -webkit-flex-direction: column; }
+    .ContentPage > .main > .image {
+      flex-shrink: 0;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      top: 0;
+      bottom: 0;
+      overflow-y: auto; }
+      .ContentPage > .main > .image > .sticky {
+        min-height: 0; }
+        .ContentPage > .main > .image > .sticky > img {
+          margin: 25px;
+          width: auto;
+          height: 250px;
+          position: static; }
+    .ContentPage > .main .content > .rate > .label {
+      padding: 0px 0 0px 0px; }
+    .ContentPage > .main .content > .groups .group .download {
+      width: 96%; }
+    .ContentPage > .main > .content, .ContentPage > .main > .groups {
+      min-width: 0;
+      padding: 10px; }
+    .ContentPage > .main > .groups {
+      width: auto;
+      flex: 1 1; } }
+
+.WatchPage {
+  padding: 64px; }
+  .WatchPage .thumb {
+    width: 200px;
+    float: right; }
+  .WatchPage .link-content .content-name {
+    font-size: 36px; }
+  .WatchPage .link-content .captcha img {
+    float: right; }
+  .WatchPage .link-content .captcha .answer {
+    margin-right: 216px;
+    line-height: 100px;
+    vertical-align: middle; }
+  .WatchPage .link-content .download-button button {
+    font-size: 48px; }
+  .WatchPage .link-content .incorrect, .WatchPage .link-content .disclaimer {
+    font-size: 16px;
+    color: maroon; }
+  .WatchPage .link-content .player {
+    max-width: 800px;
+    text-align: center; }
+  .WatchPage .link-content .video-player {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    background: #000 url(/files/img/loading.gif) center center no-repeat; }
+    .WatchPage .link-content .video-player iframe,
+    .WatchPage .link-content .video-player object,
+    .WatchPage .link-content .video-player embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; }
+    .WatchPage .link-content .video-player .share {
+      position: absolute;
+      top: 0px;
+      background: #000;
+      color: #fff;
+      width: 100%;
+      height: 40px;
+      z-index: 2; }
+  .WatchPage .link-content .links {
+    background: #000;
+    color: #c9c9c9; }
+  .WatchPage .link-content .button {
+    display: inline-block;
+    position: relative;
+    padding: 0px 10px 0px 10px;
+    margin: 10px 2px 10px 2px;
+    padding-left: 50px;
+    background: #2997f5;
+    text-decoration: none;
+    color: white;
+    transition: .2s; }
+    .WatchPage .link-content .button:before, .WatchPage .link-content .button:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      padding-top: 7px;
+      padding-bottom: inherit;
+      width: 40px;
+      content: "\00a0";
+      font-family: 'FontAwesome', sans-serif;
+      text-align: center;
+      transition: .2s;
+      transform-origin: 50% 60%; }
+    .WatchPage .link-content .button:hover:after {
+      -webkit-animation: bounceright .3s alternate ease infinite;
+      animation: bounceright .3s alternate ease infinite; }
+    .WatchPage .link-content .button:before {
+      background: #f52929; }
+    .WatchPage .link-content .button:hover {
+      background: #0a7ee1;
+      cursor: pointer; }
+    .WatchPage .link-content .button:active, .WatchPage .link-content .button:focus {
+      background: #06477f;
+      outline: none; }
+
+@-webkit-keyframes bounceright {
+  from {
+    -webkit-transform: translateX(0); }
+  to {
+    -webkit-transform: translateX(3px); } }
+  .WatchPage .link-content .button {
+    min-width: 70px;
+    direction: ltr;
+    font-weight: bold; }
+    .WatchPage .link-content .button:after {
+      content: "\F04B"; }
+  .WatchPage .link-content .playing {
+    background: #f52929; }
+    .WatchPage .link-content .playing:hover {
+      background: #e10a0a; }
+    .WatchPage .link-content .playing:active, .WatchPage .link-content .playing:focus {
+      background: #7f0606; }
+    .WatchPage .link-content .playing:after {
+      content: "\F04B";
+      -webkit-animation: bounceright .3s alternate ease infinite;
+      animation: bounceright .3s alternate ease infinite; }
+
+@media (max-width: 800px) {
+  .WatchPage {
+    padding: 10px; }
+    .WatchPage .thumb {
+      display: none; }
+    .WatchPage .link-content {
+      margin-right: 0; }
+      .WatchPage .link-content .captcha img {
+        float: none;
+        display: block; }
+      .WatchPage .link-content .captcha .answer {
+        margin-right: 0; } }
+
+.LinkPage {
+  padding: 64px; }
+  .LinkPage .thumb {
+    width: 200px;
+    float: right; }
+  .LinkPage .link-content {
+    margin-right: 232px;
+    font-size: 24px; }
+    .LinkPage .link-content > div {
+      margin: 16px 0; }
+    .LinkPage .link-content .content-name {
+      font-size: 36px; }
+    .LinkPage .link-content .captcha img {
+      float: right; }
+    .LinkPage .link-content .captcha .answer {
+      margin-right: 216px;
+      line-height: 100px;
+      vertical-align: middle; }
+    .LinkPage .link-content .download-button button {
+      font-size: 48px; }
+    .LinkPage .link-content .incorrect, .LinkPage .link-content .disclaimer {
+      font-size: 16px;
+      color: maroon; }
+
+@media (max-width: 800px) {
+  .LinkPage {
+    padding: 32px; }
+    .LinkPage .thumb {
+      display: none; }
+    .LinkPage .link-content {
+      margin-right: 0; }
+      .LinkPage .link-content .captcha img {
+        float: none;
+        display: block; }
+      .LinkPage .link-content .captcha .answer {
+        margin-right: 0; } }
+
+.Footer {
+  background: #313131;
+  text-align: center;
+  direction: ltr;
+  padding: 20px; }
+  .Footer a {
+    text-decoration: none;
+    color: #dbdbdb; }
+  .Footer a:hover {
+    color: #fff; }
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block; }
+
+.green {
+  background-color: #0dae64; }
+
+.blue {
+  background-color: #008aff; }
+
+.ClientBar {
+  color: white; }
+  .ClientBar > .bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 800;
+    height: 40px;
+    display: none;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid white; }
+    .ClientBar > .bar.visible {
+      display: flex; }
+    .ClientBar > .bar .clogo {
+      margin: 0 3%;
+      padding: 0 10px;
+      border: 1px solid white; }
+      .ClientBar > .bar .clogo span {
+        font-weight: 600; }
+      .ClientBar > .bar .clogo:hover {
+        background: white;
+        color: black; }
+  .ClientBar > .window {
+    position: fixed;
+    bottom: 40px;
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
+    z-index: 800;
+    max-height: 500px;
+    max-height: 75vh;
+    overflow-y: auto;
+    display: none; }
+    .ClientBar > .window.visible {
+      display: block; }
+    .ClientBar > .window > i {
+      float: left;
+      margin: 8px; }
+    .ClientBar > .window > .download {
+      padding: 16px;
+      display: none; }
+      .ClientBar > .window > .download .download {
+        display: inline-block;
+        border: 2px solid white;
+        color: white;
+        padding: 8px; }
+      .ClientBar > .window > .download.visible {
+        display: block; }
+    .ClientBar > .window > .torrents {
+      padding: 8px 16px;
+      display: none; }
+      .ClientBar > .window > .torrents.visible {
+        display: block; }
+      .ClientBar > .window > .torrents > .torrent {
+        margin: 8px 4px; }
+        .ClientBar > .window > .torrents > .torrent > .name {
+          font-weight: 600;
+          font-size: 14px;
+          word-wrap: break-word;
+          margin: 1px; }
+        .ClientBar > .window > .torrents > .torrent > .progress {
+          border-bottom: 2px solid yellow;
+          width: 0px;
+          margin: 4px 1px; }
+        .ClientBar > .window > .torrents > .torrent > .controls {
+          display: flex;
+          align-items: center; }
+          .ClientBar > .window > .torrents > .torrent > .controls > span {
+            flex: 50% 1 1;
+            direction: rtl;
+            padding: 0px 8px;
+            font-size: 14px;
+            white-space: nowrap; }
+          .ClientBar > .window > .torrents > .torrent > .controls > button {
+            flex: 24px 0 0;
+            font-size: 14px;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            color: white;
+            background: transparent;
+            border: 1px solid white;
+            margin: 1px; }
+            .ClientBar > .window > .torrents > .torrent > .controls > button.blur {
+              opacity: 0.3; }
+          .ClientBar > .window > .torrents > .torrent > .controls .upload-speed {
+            color: lime; }
+          .ClientBar > .window > .torrents > .torrent > .controls .download-speed {
+            color: yellow; }
+    .ClientBar > .window > .notice {
+      font-size: 14px;
+      color: yellow; }
+    .ClientBar > .window > .upgrade, .ClientBar > .window > .crit-upgrade {
+      font-size: 14px;
+      color: #f70;
+      display: none; }
+      .ClientBar > .window > .upgrade.visible, .ClientBar > .window > .crit-upgrade.visible {
+        display: block; }
+      .ClientBar > .window > .upgrade a, .ClientBar > .window > .crit-upgrade a {
+        color: #f70; }
+
+.ClientPlayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: none;
+  line-height: 100vh;
+  text-align: center; }
+  .ClientPlayer.visible {
+    display: block; }
+  .ClientPlayer video {
+    max-width: 90%;
+    max-height: 90%;
+    vertical-align: middle; }
+  .ClientPlayer .buffering {
+    display: none;
+    line-height: 100vh;
+    width: 100%;
+    pointer-events: none;
+    font-size: 10vh;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    text-align: center; }
+    .ClientPlayer .buffering.visible {
+      display: block; }
+
+.Create {
+  padding: 16px 32px; }
+  .Create > div {
+    margin: 16px 0; }
+
+.Edit {
+  padding: 16px 32px; }
+  .Edit > div {
+    margin: 16px 0; }
+  .Edit iframe {
+    border: 0;
+    width: 300px;
+    height: 30px; }
+  .Edit .groups li {
+    font-size: 20px; }
+    .Edit .groups li.invisible {
+      opacity: 0.5; }
+
+.GlobalPush .send {
+  display: none; }
+
+.EditGroup {
+  padding: 16px 32px; }
+  .EditGroup > div {
+    margin: 16px 0; }
+  .EditGroup textarea {
+    width: 500px; }
+  .EditGroup iframe {
+    border: 0;
+    width: 300px;
+    height: 30px; }
+  .EditGroup .move-delete {
+    float: left; }
+  .EditGroup .images .thumb {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    position: relative; }
+    .EditGroup .images .thumb i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: red;
+      cursor: pointer; }
+  .EditGroup .download {
+    border: 1px solid grey;
+    padding: 8px 16px; }
+    .EditGroup .download.deleted {
+      opacity: 0.5; }
+    .EditGroup .download select {
+      display: block;
+      margin: 8px 0; }
+
+body.default .Header,
+Header.default {
+  background-color: #444; }
+  body.default .Header .menus .subcategories a,
+  Header.default .menus .subcategories a {
+    color: #444; }
+  body.default .Header .menus .categories a.active,
+  Header.default .menus .categories a.active {
+    color: #444; }
+  body.default .Header .menus .subcategories a.active,
+  Header.default .menus .subcategories a.active {
+    color: #444;
+    border: 1px solid #444; }
+
+body.default {
+  background-color: #444; }
+
+body.default .Header {
+  background-color: #444; }
+
+body.default .Header .menus {
+  background-color: #444; }
+
+body.default .Footer {
+  background-color: #444; }
+
+body.default .Content .Items .item.default {
+  background-color: #444; }
+
+body.default .ClientBar > * {
+  background-color: #444; }
+
+body.default .NotifyProposal {
+  background-color: #444; }
+
+body.movies .Header,
+Header.movies {
+  background-color: #121212; }
+  body.movies .Header .menus .subcategories a,
+  Header.movies .menus .subcategories a {
+    color: #121212; }
+  body.movies .Header .menus .categories a.active,
+  Header.movies .menus .categories a.active {
+    color: #121212; }
+  body.movies .Header .menus .subcategories a.active,
+  Header.movies .menus .subcategories a.active {
+    color: #121212;
+    border: 1px solid #121212; }
+
+body.movies {
+  background-color: #121212; }
+
+body.movies .Header {
+  background-color: #121212; }
+
+body.movies .Header .menus {
+  background-color: #121212; }
+
+body.movies .Footer {
+  background-color: #121212; }
+
+body.movies .Content .Items .item.movies {
+  background-color: #121212; }
+
+body.movies .ClientBar > * {
+  background-color: #121212; }
+
+body.movies .NotifyProposal {
+  background-color: #121212; }
+
+body.tv .Header,
+Header.tv {
+  background-color: #00570c; }
+  body.tv .Header .menus .subcategories a,
+  Header.tv .menus .subcategories a {
+    color: #00570c; }
+  body.tv .Header .menus .categories a.active,
+  Header.tv .menus .categories a.active {
+    color: #00570c; }
+  body.tv .Header .menus .subcategories a.active,
+  Header.tv .menus .subcategories a.active {
+    color: #00570c;
+    border: 1px solid #00570c; }
+
+body.tv {
+  background-color: #00570c; }
+
+body.tv .Header {
+  background-color: #00570c; }
+
+body.tv .Header .menus {
+  background-color: #00570c; }
+
+body.tv .Footer {
+  background-color: #00570c; }
+
+body.tv .Content .Items .item.tv {
+  background-color: #00570c; }
+
+body.tv .ClientBar > * {
+  background-color: #00570c; }
+
+body.tv .NotifyProposal {
+  background-color: #00570c; }
+
+body.games .Header,
+Header.games {
+  background-color: #580000; }
+  body.games .Header .menus .subcategories a,
+  Header.games .menus .subcategories a {
+    color: #580000; }
+  body.games .Header .menus .categories a.active,
+  Header.games .menus .categories a.active {
+    color: #580000; }
+  body.games .Header .menus .subcategories a.active,
+  Header.games .menus .subcategories a.active {
+    color: #580000;
+    border: 1px solid #580000; }
+
+body.games {
+  background-color: #580000; }
+
+body.games .Header {
+  background-color: #580000; }
+
+body.games .Header .menus {
+  background-color: #580000; }
+
+body.games .Footer {
+  background-color: #580000; }
+
+body.games .Content .Items .item.games {
+  background-color: #580000; }
+
+body.games .ClientBar > * {
+  background-color: #580000; }
+
+body.games .NotifyProposal {
+  background-color: #580000; }
+
+body.apps .Header,
+Header.apps {
+  background-color: #004f63; }
+  body.apps .Header .menus .subcategories a,
+  Header.apps .menus .subcategories a {
+    color: #004f63; }
+  body.apps .Header .menus .categories a.active,
+  Header.apps .menus .categories a.active {
+    color: #004f63; }
+  body.apps .Header .menus .subcategories a.active,
+  Header.apps .menus .subcategories a.active {
+    color: #004f63;
+    border: 1px solid #004f63; }
+
+body.apps {
+  background-color: #004f63; }
+
+body.apps .Header {
+  background-color: #004f63; }
+
+body.apps .Header .menus {
+  background-color: #004f63; }
+
+body.apps .Footer {
+  background-color: #004f63; }
+
+body.apps .Content .Items .item.apps {
+  background-color: #004f63; }
+
+body.apps .ClientBar > * {
+  background-color: #004f63; }
+
+body.apps .NotifyProposal {
+  background-color: #004f63; }
+
+body.music .Header,
+Header.music {
+  background-color: #6e002d; }
+  body.music .Header .menus .subcategories a,
+  Header.music .menus .subcategories a {
+    color: #6e002d; }
+  body.music .Header .menus .categories a.active,
+  Header.music .menus .categories a.active {
+    color: #6e002d; }
+  body.music .Header .menus .subcategories a.active,
+  Header.music .menus .subcategories a.active {
+    color: #6e002d;
+    border: 1px solid #6e002d; }
+
+body.music {
+  background-color: #6e002d; }
+
+body.music .Header {
+  background-color: #6e002d; }
+
+body.music .Header .menus {
+  background-color: #6e002d; }
+
+body.music .Footer {
+  background-color: #6e002d; }
+
+body.music .Content .Items .item.music {
+  background-color: #6e002d; }
+
+body.music .ClientBar > * {
+  background-color: #6e002d; }
+
+body.music .NotifyProposal {
+  background-color: #6e002d; }
+
+.NotFound {
+  padding: 64px; }
+
+.Job {
+  direction: ltr;
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 800px; }
+
+@media (max-width: 1000px) {
+  .Content {
+    padding-top: 0px; }
+  body, input, select {
+    font-size: 12px; } }
+
+.Templates {
+  display: none; }
+
+.NotifyProposal {
+  position: fixed;
+  top: -500px;
+  left: 10px;
+  width: 300px;
+  z-index: 3000;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  color: white;
+  transition: top 1s; }
+  .NotifyProposal.visible {
+    top: 10px; }
+  .NotifyProposal button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 16px;
+    padding: 6px 12px;
+    margin: 6px; }
+
+.fa-chevron-left,
+.fa-chevron-right {
+  transform: scaleX(-1); }
+
